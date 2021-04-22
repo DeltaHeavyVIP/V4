@@ -3,9 +3,6 @@ import sys
 
 class Entry:
 
-    def __init__(self, data):
-        self.data = data
-
     def read(self, data):
         inp = input("Ввод данных из file, console: ")
         while not (inp == "console" or inp == "file"):
@@ -24,17 +21,17 @@ class Entry:
                 print("Некорректный ввод данных")
         data.set_n(n)
 
-        for i in range(len(0, n)):
+        for i in range(0, n):
             while True:
                 try:
-                    number = float(input("Введите значение x" + i + ": "))
+                    number = float(input("Введите значение X{}: ".format(i)))
                     break
                 except ValueError:
                     print("Некорректный ввод данных")
             data.set_element_mass(number, 0, i)
             while True:
                 try:
-                    number = float(input("Введите значение y" + i + ": "))
+                    number = float(input("Введите значение Y{}: ".format(i)))
                     break
                 except ValueError:
                     print("Некорректный ввод данных")
@@ -46,7 +43,7 @@ class Entry:
         data.set_file_or_console(file_or_console)
 
     def read_from_file(self, data):
-        file = open("resources/input.txt")
+        file = open('input')
 
         try:
             n = float(file.readline().strip())

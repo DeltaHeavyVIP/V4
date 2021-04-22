@@ -1,2 +1,7 @@
-from data import Data
-import entry.Entry
+from data.Data import *
+from entry.Entry import *
+
+data = Data()
+entry = Entry()
+entry.read(data)
+print("mem")

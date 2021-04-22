@@ -73,7 +73,7 @@ class Data:
         self.__n = n
 
     def set_element_mass(self, number, i, j):
-        self.__mass[i][j] = number
+        self.__mass[i].insert(j, number)
 
     def set_file_or_console(self, file_or_console):
         self.__file_or_console = file_or_console
