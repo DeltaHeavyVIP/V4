@@ -17,7 +17,7 @@ class CoefficientPirsona:
         sum_up = 0
         sum_down_x = 0
         sum_down_y = 0
-        for i in range(0, data.get_n):
+        for i in range(0, data.get_n()):
             sum_up += (data.get_mass()[0][i] - middle_x) * (data.get_mass()[0][i] - middle_y)
             sum_down_x += (data.get_mass()[0][i] - middle_x) ** 2
             sum_down_y += (data.get_mass()[1][i] - middle_y) ** 2

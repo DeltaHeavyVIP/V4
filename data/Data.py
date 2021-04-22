@@ -10,7 +10,17 @@ class Data:
         self.__s_xxy = None
         self.__n = None
         self.__mass = [[], []]
+        self.__f = []
+        self.__e = []
         self.__file_or_console = None
+        self.__line_a = None
+        self.__line_b = None
+        self.__square_a = None
+        self.__square_b = None
+        self.__square_c = None
+        self.__devition = None
+        self.__standart_devition = None
+        self.__accuracy = None
 
     def get_coefficient_pirsona(self):
         return self.__coefficient_pirsona
@@ -45,6 +55,36 @@ class Data:
     def get_file_or_console(self):
         return self.__file_or_console
 
+    def get_line_a(self):
+        return self.__line_a
+
+    def get_line_b(self):
+        return self.__line_b
+
+    def get_square_a(self):
+        return self.__square_a
+
+    def get_square_b(self):
+        return self.__square_b
+
+    def get_square_c(self):
+        return self.__square_c
+
+    def get_devition(self):
+        return self.__devition
+
+    def get_standart_devition(self):
+        return self.__standart_devition
+
+    def get_accuracy(self):
+        return self.__accuracy
+
+    def get_f(self):
+        return self.__f
+
+    def get_e(self):
+        return self.__e
+
     def set_coefficient_pirsona(self, coefficient_pirsona):
         self.__coefficient_pirsona = coefficient_pirsona
 
@@ -77,3 +117,33 @@ class Data:
 
     def set_file_or_console(self, file_or_console):
         self.__file_or_console = file_or_console
+
+    def set_line_a(self, line_a):
+        self.__line_a = line_a
+
+    def set_line_b(self, line_b):
+        self.__line_b = line_b
+
+    def set_square_a(self, square_a):
+        self.__square_a = square_a
+
+    def set_square_b(self, square_b):
+        self.__square_b = square_b
+
+    def set_square_c(self, square_c):
+        self.__square_c = square_c
+
+    def set_devition(self, devition):
+        self.__devition = devition
+
+    def set_standart_devition(self, standart_devition):
+        self.__standart_devition = standart_devition
+
+    def set_accuracy(self, accuracy):
+        self.__accuracy = accuracy
+
+    def set_f(self, f):
+        self.__f = f
+
+    def set_e(self, e):
+        self.__e = e

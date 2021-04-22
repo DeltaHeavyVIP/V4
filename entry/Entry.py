@@ -4,7 +4,8 @@ import sys
 class Entry:
 
     def read(self, data):
-        inp = input("Ввод данных из file, console: ")
+        #TODO inp = input("Ввод данных из file, console: ")
+        inp = "file"  # TODO
         while not (inp == "console" or inp == "file"):
             inp = input("Ввод данных из file, console: ")
         if inp == "console":
@@ -50,6 +51,7 @@ class Entry:
         except ValueError as e:
             print("Exception:", e)
             sys.exit()
+        data.set_n(n)
 
         mass = file.readline().strip().replace(",", ".").split(" ")
         for i in range(0, n):
