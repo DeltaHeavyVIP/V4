@@ -1,6 +1,6 @@
 class Data:
     def __init__(self):
-        self.__correlation = None
+        self.__coefficient_pirsona = None
         self.__s_x = None
         self.__s_xx = None
         self.__s_xxx = None
@@ -12,8 +12,8 @@ class Data:
         self.__mass = [[], []]
         self.__file_or_console = None
 
-    def get_correlation(self):
-        return self.__correlation
+    def get_coefficient_pirsona(self):
+        return self.__coefficient_pirsona
 
     def get_s_x(self):
         return self.__s_x
@@ -45,8 +45,8 @@ class Data:
     def get_file_or_console(self):
         return self.__file_or_console
 
-    def set_correlation(self, correlation):
-        self.__correlation = correlation
+    def set_coefficient_pirsona(self, coefficient_pirsona):
+        self.__coefficient_pirsona = coefficient_pirsona
 
     def set_s_x(self, s_x):
         self.__s_x = s_x
