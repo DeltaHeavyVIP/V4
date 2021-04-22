@@ -4,4 +4,3 @@ from entry.Entry import *
 data = Data()
 entry = Entry()
 entry.read(data)
-print("mem")

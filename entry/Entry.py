@@ -1,4 +1,5 @@
 import sys
+import os
 
 
 class Entry:
@@ -43,16 +44,16 @@ class Entry:
         data.set_file_or_console(file_or_console)
 
     def read_from_file(self, data):
-        file = open('input')
+        file = open("resources/input", "r")
 
         try:
-            n = float(file.readline().strip())
+            n = int(file.readline().strip())
         except ValueError as e:
             print("Exception:", e)
             sys.exit()
 
         mass = file.readline().strip().replace(",", ".").split(" ")
-        for i in range(len(0, n)):
+        for i in range(0, n):
             try:
                 number = float(mass[i])
             except ValueError as e:
@@ -61,7 +62,7 @@ class Entry:
             data.set_element_mass(number, 0, i)
 
         mass = file.readline().strip().replace(",", ".").split(" ")
-        for i in range(len(0, n)):
+        for i in range(0, n):
             try:
                 number = float(mass[i])
             except ValueError as e:
@@ -72,8 +73,9 @@ class Entry:
         try:
             file_or_console = file.readline().strip()
             if not (file_or_console == "file" or file_or_console == "console"):
-                raise Exception("Неверно введен данные связанные с выводом информации")
+                raise Exception("Неверно введены данные связанные с выводом информации")
         except Exception as e:
             print("Exception:", e)
             sys.exit()
         data.set_file_or_console(file_or_console)
+        file.close()
