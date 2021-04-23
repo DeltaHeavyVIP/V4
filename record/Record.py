@@ -61,19 +61,19 @@ class Record:
             number = data.get_square_c()
             self.__string += 'C = {}\n'.format(number)
         elif name == "ЭКСПОНЕНЦИАЛЬНАЯ ФУНКЦИЯ":
-            number = exp(data.get_line_a())
+            number = exp(data.get_exp_b())
             self.__string += 'A = {}\n'.format(number)
-            number = data.get_line_b()
+            number = data.get_exp_a()
             self.__string += 'B = {}\n'.format(number)
         elif name == "ЛОГАРИФМИЧЕСКАЯ ФУНКЦИЯ":
-            number = data.get_line_a()
+            number = data.get_log_a()
             self.__string += 'A = {}\n'.format(number)
-            number = data.get_line_b()
+            number = data.get_log_b()
             self.__string += 'B = {}\n'.format(number)
         elif name == "СТЕПЕННАЯ ФУНКЦИЯ":
-            number = exp(data.get_line_a())
+            number = exp(data.get_pow_b())
             self.__string += 'A = {}\n'.format(number)
-            number = data.get_line_b()
+            number = data.get_pow_a()
             self.__string += 'B = {}\n'.format(number)
 
         self.__string += 'Мера отклонения = {}\n'.format(data.get_devition())

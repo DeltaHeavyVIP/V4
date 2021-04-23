@@ -8,6 +8,12 @@ class Data:
         self.__s_y = None
         self.__s_xy = None
         self.__s_xxy = None
+        self.__s_ln_x = None
+        self.__s_ln_xx = None
+        self.__s_ln_y = None
+        self.__s_ln_xy = None
+        self.__s_x_ln_y = None
+        self.__s_y_ln_x = None
         self.__n = None
         self.__mass = [[], []]
         self.__f = []
@@ -15,9 +21,16 @@ class Data:
         self.__file_or_console = None
         self.__line_a = None
         self.__line_b = None
+        self.__pow_a = None
+        self.__pow_b = None
+        self.__exp_a = None
+        self.__exp_b = None
+        self.__log_a = None
+        self.__log_b = None
         self.__square_a = None
         self.__square_b = None
         self.__square_c = None
+
         self.__devition = None
         self.__standart_devition = None
         self.__accuracy = None
@@ -55,11 +68,35 @@ class Data:
     def get_file_or_console(self):
         return self.__file_or_console
 
+    def get_s_x_ln_y(self):
+        return self.__s_x_ln_y
+
+    def get_s_y_ln_x(self):
+        return self.__s_y_ln_x
+
     def get_line_a(self):
         return self.__line_a
 
     def get_line_b(self):
         return self.__line_b
+
+    def get_pow_a(self):
+        return self.__pow_a
+
+    def get_pow_b(self):
+        return self.__pow_b
+
+    def get_exp_a(self):
+        return self.__exp_a
+
+    def get_exp_b(self):
+        return self.__exp_b
+
+    def get_log_a(self):
+        return self.__log_a
+
+    def get_log_b(self):
+        return self.__log_b
 
     def get_square_a(self):
         return self.__square_a
@@ -84,6 +121,18 @@ class Data:
 
     def get_e(self):
         return self.__e
+
+    def get_s_ln_x(self):
+        return self.__s_ln_x
+
+    def get_s_ln_xx(self):
+        return self.__s_ln_xx
+
+    def get_s_ln_y(self):
+        return self.__s_ln_y
+
+    def get_s_ln_xy(self):
+        return self.__s_ln_xy
 
     def set_coefficient_pirsona(self, coefficient_pirsona):
         self.__coefficient_pirsona = coefficient_pirsona
@@ -124,6 +173,24 @@ class Data:
     def set_line_b(self, line_b):
         self.__line_b = line_b
 
+    def set_pow_a(self, pow_a):
+        self.__pow_a = pow_a
+
+    def set_pow_b(self, pow_b):
+        self.__pow_b = pow_b
+
+    def set_exp_a(self, exp_a):
+        self.__exp_a = exp_a
+
+    def set_exp_b(self, exp_b):
+        self.__exp_b = exp_b
+
+    def set_log_a(self, log_a):
+        self.__log_a = log_a
+
+    def set_log_b(self, log_b):
+        self.__log_b = log_b
+
     def set_square_a(self, square_a):
         self.__square_a = square_a
 
@@ -147,3 +214,21 @@ class Data:
 
     def set_e(self, e):
         self.__e = e
+
+    def set_s_ln_x(self, s_ln_x):
+        self.__s_ln_x = s_ln_x
+
+    def set_s_ln_xx(self, s_ln_xx):
+        self.__s_ln_xx = s_ln_xx
+
+    def set_s_ln_y(self, s_ln_y):
+        self.__s_ln_y = s_ln_y
+
+    def set_s_ln_xy(self, s_ln_xy):
+        self.__s_ln_xy = s_ln_xy
+
+    def set_s_x_ln_y(self, s_x_ln_y):
+        self.__s_x_ln_y = s_x_ln_y
+
+    def set_s_y_ln_x(self, s_y_ln_x):
+        self.__s_y_ln_x = s_y_ln_x
