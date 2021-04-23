@@ -9,43 +9,45 @@ class Function:
         index = 0
         max = 0
         draw = DrawGraph(data)
+        recorded = Record()
         # Линейная функция
         self.public(data, 1)
+        recorded.record(data, "ЛИНЕЙНАЯ ФУНКЦИЯ", "Fi=ax+b")
+        draw.drawLine(data)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 1
-        Record().record(data,"ЛИНЕЙНАЯ ФУНКЦИЯ","Fi=ax+b")
-        draw.drawLine(data)
         # Полиномиальную функцию 2-й степени
         self.public(data, 2)
+        recorded.record(data, "ПОЛИНОМИАЛЬНАЯ ФУНКЦИЯ", "Fi=ax^2+bx+c")
+        draw.drawLine(data)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 2
-        Record().record(data,"ПОЛИНОМИАЛЬНАЯ ФУНКЦИЯ","Fi=ax^2+bx+c")
-        draw.drawLine(data)
         # Экспоненциальную функцию
         self.public(data, 3)
+        recorded.record(data, "ЭКСПОНЕНЦИАЛЬНАЯ ФУНКЦИЯ", "Fi=ae^bx")
+        draw.drawLine(data)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 3
-        Record().record(data,"ЭКСПОНЕНЦИАЛЬНАЯ ФУНКЦИЯ","Fi=ae^bx")
-        draw.drawLine(data)
         # Логарифмическую функцию
         self.public(data, 4)
+        recorded.record(data, "ЛОГАРИФМИЧЕСКАЯ ФУНКЦИЯ", "Fi=a*ln(x)+b")
+        draw.drawLine(data)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 4
-        Record().record(data,"ЛОГАРИФМИЧЕСКАЯ ФУНКЦИЯ","Fi=a*ln(x)+b")
-        draw.drawLine(data)
         # Степенную функцию
         self.public(data, 5)
-        if data.get_accuracy() > max:
-            max = data.get_accuracy()
-            index = 5
-        Record().record(data,"СТЕПЕННАЯ ФУНКЦИЯ","Fi=ax^b")
+        recorded.record(data, "СТЕПЕННАЯ ФУНКЦИЯ", "Fi=ax^b")
         draw.drawLine(data)
+        if data.get_accuracy() > max:
+            index = 5
+        recorded.output(data.get_file_or_console(), index)
 
     def public(self, data, equation):
+
         mass = []
         for i in range(0, data.get_n()):
             if equation == 1:
@@ -61,18 +63,23 @@ class Function:
                 number = exp(data.get_line_a()) * pow(data.get_mass()[0][i], data.get_line_b())
             mass.insert(i, number)
         data.set_f(mass)
+
+        mass = []
         for i in range(0, data.get_n()):
-            number = data.get_mass()[1][i] - data.get_f()[i]
+            number = data.get_f()[i] - data.get_mass()[1][i]
             mass.insert(i, number)
         data.set_e(mass)
+
         sum = 0
         for i in range(0, data.get_n()):
             sum += (data.get_e()[i]) ** 2
         data.set_devition(sum)
+
         sum = 0
         for i in range(0, data.get_n()):
             sum += (data.get_f()[i] - data.get_mass()[1][i]) ** 2
         data.set_standart_devition(sqrt(sum / data.get_n()))
+
         sum_up = 0
         sum_down_left = 0
         sum_down_right = 0

@@ -1,7 +1,7 @@
 from math import sqrt
 
 
-class CoefficientPirsona:
+class CoefficientPirsona:#TODO
 
     def count(self, data):
         sum_x = 0
