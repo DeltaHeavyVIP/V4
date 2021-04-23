@@ -86,4 +86,7 @@ class Record:
             print(self.__string)
             print("Наилучшая аппроксимирующая функция №",index)
         else:
-            print(1)#TODO
+            file = open("resources/output.txt", "w")
+            file.write(self.__string)
+            file.write("Наилучшая аппроксимирующая функция №{}".format(index))
+            file.close()

@@ -44,7 +44,7 @@ class Entry:
         data.set_file_or_console(file_or_console)
 
     def read_from_file(self, data):
-        file = open("resources/input", "r")
+        file = open("resources/input.txt", "r")
 
         try:
             n = int(file.readline().strip())

@@ -87,5 +87,5 @@ class Function:
             sum_up += (data.get_mass()[1][i] - data.get_f()[i]) ** 2
             sum_down_left += (data.get_f()[i]) ** 2
             sum_down_right += data.get_f()[i]
-        r = 1 - (sum_up / (sum_down_left - (sum_down_right / data.get_n())))
+        r = 1 - (sum_up / (sum_down_left - (sum_down_right**2 / data.get_n())))
         data.set_accuracy(r)
