@@ -1,2 +1,2 @@
 class Record:
-    def record(self):
+    def record(self,data):
