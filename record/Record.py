@@ -84,7 +84,7 @@ class Record:
     def output(self, file_or_console, index):
         if file_or_console == "console":
             print(self.__string)
-            print("Наилучшая аппроксимирующая функция №",index)
+            print("Наилучшая аппроксимирующая функция №", index)
         else:
             file = open("resources/output.txt", "w")
             file.write(self.__string)

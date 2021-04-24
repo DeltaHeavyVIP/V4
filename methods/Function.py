@@ -13,35 +13,36 @@ class Function:
         # Линейная функция
         self.public(data, 1)
         recorded.record(data, "ЛИНЕЙНАЯ ФУНКЦИЯ", "Fi=ax+b")
-        draw.drawLine(data)
+        draw.drawLine(data, 1)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 1
         # Полиномиальную функцию 2-й степени
         self.public(data, 2)
         recorded.record(data, "ПОЛИНОМИАЛЬНАЯ ФУНКЦИЯ", "Fi=ax^2+bx+c")
-        draw.drawLine(data)
+        draw.drawLine(data, 2)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 2
         # Экспоненциальную функцию
         self.public(data, 3)
         recorded.record(data, "ЭКСПОНЕНЦИАЛЬНАЯ ФУНКЦИЯ", "Fi=ae^bx")
-        draw.drawLine(data)
+        draw.drawLine(data, 3)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 3
         # Логарифмическую функцию
         self.public(data, 4)
         recorded.record(data, "ЛОГАРИФМИЧЕСКАЯ ФУНКЦИЯ", "Fi=a*ln(x)+b")
-        draw.drawLine(data)
+        draw.drawLine(data, 4)
         if data.get_accuracy() > max:
             max = data.get_accuracy()
             index = 4
         # Степенную функцию
         self.public(data, 5)
         recorded.record(data, "СТЕПЕННАЯ ФУНКЦИЯ", "Fi=ax^b")
-        draw.drawLine(data)
+        draw.drawLine(data, 5)
+        draw.draw_show()
         if data.get_accuracy() > max:
             index = 5
         recorded.output(data.get_file_or_console(), index)
@@ -58,7 +59,8 @@ class Function:
             elif equation == 3:
                 number = exp(data.get_exp_b()) * exp(data.get_exp_a() * data.get_mass()[0][i])
             elif equation == 4:
-                number = data.get_log_a() * log(data.get_mass()[0][i], e) + data.get_log_b()
+                if data.get_mass()[0][i] > 0:
+                    number = data.get_log_a() * log(data.get_mass()[0][i], e) + data.get_log_b()
             elif equation == 5:
                 number = exp(data.get_pow_b()) * pow(data.get_mass()[0][i], data.get_pow_a())
             mass.insert(i, number)
