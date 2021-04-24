@@ -56,11 +56,11 @@ class Function:
                 number = data.get_mass()[0][i] * data.get_mass()[0][i] * data.get_square_a() + data.get_square_b() * \
                          data.get_mass()[0][i] + data.get_square_c()
             elif equation == 3:
-                number = exp(data.get_line_a()) * exp(data.get_line_b() * data.get_mass()[0][i])
+                number = exp(data.get_exp_b()) * exp(data.get_exp_a() * data.get_mass()[0][i])
             elif equation == 4:
-                number = data.get_line_a() * log(data.get_mass()[0][i], e) + data.get_line_b()
+                number = data.get_log_a() * log(data.get_mass()[0][i], e) + data.get_log_b()
             elif equation == 5:
-                number = exp(data.get_line_a()) * pow(data.get_mass()[0][i], data.get_line_b())
+                number = exp(data.get_pow_b()) * pow(data.get_mass()[0][i], data.get_pow_a())
             mass.insert(i, number)
         data.set_f(mass)
 
@@ -87,5 +87,5 @@ class Function:
             sum_up += (data.get_mass()[1][i] - data.get_f()[i]) ** 2
             sum_down_left += (data.get_f()[i]) ** 2
             sum_down_right += data.get_f()[i]
-        r = 1 - (sum_up / (sum_down_left - (sum_down_right**2 / data.get_n())))
+        r = 1 - (sum_up / (sum_down_left - (sum_down_right ** 2 / data.get_n())))
         data.set_accuracy(r)
