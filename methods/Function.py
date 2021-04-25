@@ -59,8 +59,11 @@ class Function:
             elif equation == 3:
                 number = exp(data.get_exp_b()) * exp(data.get_exp_a() * data.get_mass()[0][i])
             elif equation == 4:
-                if data.get_mass()[0][i] > 0:
-                    number = data.get_log_a() * log(data.get_mass()[0][i], e) + data.get_log_b()
+                if data.get_mass()[0][i] <= 0:
+                    number_1 = 0.01
+                else:
+                    number_1 = data.get_mass()[0][i]
+                number = data.get_log_a() * log(number_1, e) + data.get_log_b()
             elif equation == 5:
                 number = exp(data.get_pow_b()) * pow(data.get_mass()[0][i], data.get_pow_a())
             mass.insert(i, number)
